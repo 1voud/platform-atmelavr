@@ -31,7 +31,7 @@
   "packages": {
     "toolchain-atmelavr": {
       "type": "toolchain",
-      "version": "~1.50400.0"
+      "version": "~1.70300.191015"
     },
     "framework-arduino-avr": {
       "type": "framework",
