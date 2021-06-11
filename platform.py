@@ -96,7 +96,7 @@ class AtmelavrPlatform(PlatformBase):
                     "end",
                     "target remote $DEBUG_PORT",
                     "$INIT_BREAK",
-                    "$LOAD_CMD"
+                    "$LOAD_CMDS"
                 ],
                 "port": ":1234",
                 "server": {
@@ -108,6 +108,27 @@ class AtmelavrPlatform(PlatformBase):
                     ],
                     "executable": "bin/simavr"
                 },
+                "onboard": True
+            }
+        if debug.get("avr-stub", ""):
+            speed = debug["avr-stub"]["speed"]
+            debug["tools"]["avr-stub"] = {
+                "init_cmds": [
+                    "define pio_reset_halt_target",
+                    "   monitor reset",
+                    "end",
+                    "define pio_reset_run_target",
+                    "end",
+                    "set remotetimeout 1",
+                    "set serial baud {0}".format(speed),
+                    "set remote hardware-breakpoint-limit 8",
+                    "set remote hardware-watchpoint-limit 0",
+                    "target remote $DEBUG_PORT"
+                ],
+                "init_break": "",
+                "load_cmd": "preload",
+                "require_debug_port": True,
+                "default": False,
                 "onboard": True
             }
 
