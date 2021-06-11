@@ -6,11 +6,14 @@
     "mcu": "atmega2560",
     "variant": "100-pin-arduino-mega"
   },
-  "bootloader":{
+  "bootloader": {
     "led_pin": "B7"
   },
   "debug": {
-    "simavr_target": "atmega2560"
+    "simavr_target": "atmega2560",
+    "avr-stub": {
+      "speed": 115200
+    }
   },
   "frameworks": [
     "arduino"
@@ -18,7 +21,7 @@
   "name": "ATmega2560",
   "upload": {
     "maximum_ram_size": 8192,
-    "maximum_size": 261120,
+    "maximum_size": 262144,
     "protocol": "arduino",
     "require_upload_port": true,
     "speed": 115200
