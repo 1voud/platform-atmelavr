@@ -31,12 +31,17 @@
   "packages": {
     "toolchain-atmelavr": {
       "type": "toolchain",
-      "version": "~1.50400.0"
+      "version": "~1.70300.191015"
     },
     "framework-arduino-avr": {
       "type": "framework",
       "optional": true,
       "version": "~5.0.0"
+    },
+    "framework-arduino-avr-lgt8f": {
+      "type": "framework",
+      "optional": true,
+      "version": "1.0.0"
     },
     "framework-arduino-avr-attiny": {
       "type": "framework",
